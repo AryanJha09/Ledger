@@ -51,6 +51,15 @@ def generate_stress_case():
 
 
 def generate_case(case_type):
+    if case_type == "no_uncertainty":
+        return {
+        "income": 180000,
+        "debt": 15000,
+        "employment_years": 18,
+        "credit_score": 780,
+        "loan_amount": 120000
+    }
+
     if case_type == "normal":
         return generate_normal_case()
     if case_type == "missing":
@@ -73,3 +82,5 @@ def generate_dataset(n_per_type=10):
     return dataset
 
 
+def generate_no_uncertainty_case():
+    return generate_case("no_uncertainty")

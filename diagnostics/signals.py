@@ -1,3 +1,5 @@
+from diagnostics.assumption_types import classify_assumptions
+
 def detect_failure_signals(run):
     """
     Inspects a single model decision and flags
@@ -40,5 +42,15 @@ def detect_failure_signals(run):
     # Model approves or reviews despite uncertainty
     if missing_fields and decision in {"approve", "review"}:
         signals.append("risk_rationalization")
+    assumptions = agent_output.get("assumptions", [])
+
+    if assumptions:
+        assumption_types = classify_assumptions(assumptions)
+
+        if "escalated" in assumption_types:
+            signals.append("assumption_escalation")
+
+        if "degenerate" in assumption_types:
+            signals.append("assumption_degeneration")
 
     return signals
