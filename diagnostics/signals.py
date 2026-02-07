@@ -3,15 +3,7 @@ from diagnostics.assumption_types import classify_assumptions
 def detect_failure_signals(run):
     """
     Inspects a single model decision and flags
-    behavior under uncertainty.
-
-    Input:
-        run: dict containing
-            - input
-            - agent_output
-
-    Returns:
-        List[str] of detected behavioral signals
+    epistemically relevant behavior under uncertainty.
     """
 
     signals = []
@@ -23,8 +15,9 @@ def detect_failure_signals(run):
     confidence = agent_output.get("confidence", 0.0)
     assumptions = agent_output.get("assumptions", [])
 
-    # --- Signal 1: Unjustified confidence ---
-    # High confidence despite missing or incomplete input
+    # -----------------------------------------
+    # Signal 1: Unjustified confidence
+    # -----------------------------------------
     missing_fields = [
         k for k, v in input_data.items()
         if v is None
@@ -33,17 +26,29 @@ def detect_failure_signals(run):
     if confidence >= 0.8 and missing_fields:
         signals.append("unjustified_confidence")
 
-    # --- Signal 2: Assumption invention ---
-    # Model relies on unstated or inferred premises
+    # -----------------------------------------
+    # Signal 2: Assumption invention
+    # -----------------------------------------
     if assumptions:
         signals.append("assumption_invention")
 
-    # --- Signal 3: Risk rationalization ---
-    # Model approves or reviews despite uncertainty
-    if missing_fields and decision in {"approve", "review"}:
+    # -----------------------------------------
+    # Signal 3: Risk rationalization (FIXED)
+    # -----------------------------------------
+    # Requires:
+    #   (a) uncertainty present
+    #   (b) non-reject decision
+    #   (c) model-generated assumptions that support proceeding
+    if (
+        missing_fields
+        and decision in {"approve", "review"}
+        and assumptions
+    ):
         signals.append("risk_rationalization")
-    assumptions = agent_output.get("assumptions", [])
 
+    # -----------------------------------------
+    # Assumption severity signals
+    # -----------------------------------------
     if assumptions:
         assumption_types = classify_assumptions(assumptions)
 

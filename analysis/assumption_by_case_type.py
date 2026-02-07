@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from collections import defaultdict, Counter
-
+from analysis.utils import is_tooling_failure
 from analysis.assumption_breakdown import classify_assumption
 
 LOG_ROOT = Path("experiments/logs")
@@ -20,6 +20,10 @@ def analyze():
         for run_file in model_dir.glob("run_*.json"):
             with open(run_file) as f:
                 run = json.load(f)
+
+            # --- Step 1C: skip tooling failures ---
+            if is_tooling_failure(run):
+                continue
 
             case_type = run.get("case_type")
             assumptions = run.get("agent_output", {}).get("assumptions", [])

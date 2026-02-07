@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from analysis.utils import is_tooling_failure
 
 BASE_LOG_DIR = Path("experiments/logs")
 CONFIDENCE_THRESHOLD = 0.75  # High-confidence heuristic
@@ -28,10 +29,15 @@ def load_first_matching_run(model_dir: Path):
         with run_file.open(encoding="utf-8") as f:
             run = json.load(f)
 
+        # --- Step 1C: skip tooling failures ---
+        if is_tooling_failure(run):
+            continue
+
         if is_high_confidence_uncertainty_case(run):
             return run_file, run
 
     return None, None
+
 
 
 if __name__ == "__main__":

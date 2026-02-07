@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from collections import Counter
-
+from agents.null_agent import run_null_agent
 from agents.real_agent import run_real_agent
 from diagnostics.signals import detect_failure_signals
 from config.agent_config import AGENT_METADATA

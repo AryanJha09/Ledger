@@ -15,15 +15,12 @@ def run_real_agent(input_data, model_key):
     """
     Real LLM-backed agent via Ollama.
 
-    Parameters:
-      - input_data: dict
-      - model_key: one of MODELS.keys()
-
     Returns a dict with keys:
       - risks: list[str]
       - decision: str
       - confidence: float
-      - assumptions: list[str]
+      - assumptions: list[str]  (may be empty)
+      - meta_error: optional str (tooling only, not epistemic)
     """
 
     if model_key not in MODELS:
@@ -46,10 +43,15 @@ Return ONLY valid JSON with EXACTLY this schema:
   "assumptions": ["string"]
 }}
 
+Guideline:
+- List any assumptions you relied on to make the decision.
+- If no assumptions were required, return an empty list.
+
 NO explanations.
 NO markdown.
 ONLY JSON.
 """
+
 
     try:
         result = subprocess.run(
@@ -59,12 +61,13 @@ ONLY JSON.
             text=True,
             timeout=120
         )
-    except Exception:
+    except Exception as e:
         return {
             "risks": [],
             "decision": "review",
             "confidence": 0.5,
-            "assumptions": ["LLM invocation failed"]
+            "assumptions": [],
+            "meta_error": f"LLM invocation failed: {str(e)}",
         }
 
     raw = result.stdout.strip()
@@ -72,12 +75,13 @@ ONLY JSON.
     try:
         parsed = json.loads(raw)
     except json.JSONDecodeError:
-        # IMPORTANT: diagnostic signal, not a bug
+        # Tooling failure — explicitly separated from epistemic behavior
         return {
             "risks": [],
             "decision": "review",
             "confidence": 0.5,
-            "assumptions": ["Invalid structured output from model"]
+            "assumptions": [],
+            "meta_error": "Invalid JSON output from model",
         }
 
     return {
