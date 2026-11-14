@@ -1,0 +1,29 @@
+% Venue-neutral draft in IEEE two-column format. Sections live in sections/
+% so the same text can be moved to the ACL template (acl.sty) if ACL 2027 is chosen.
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,booktabs,graphicx,xcolor,url}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\res}[1]{\textcolor{blue}{[RESULT: #1]}} % filled only from results/*/report
+\graphicspath{{../results/main/report/}}
+
+\begin{document}
+\title{Deferral Is Not Restraint: An Output-Level Audit of How Open-Weight LLMs Handle Missing and Contradictory Evidence in Autonomous Decisions}
+\author{\IEEEauthorblockN{Anonymous Authors}\IEEEauthorblockA{Paper under double-blind review}}
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/definitions}
+\input{sections/method}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\appendices
+\input{sections/appendix}
+\end{document}

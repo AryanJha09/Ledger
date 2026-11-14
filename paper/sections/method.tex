@@ -1,0 +1,46 @@
+\section{Experimental Design}\label{sec:method}
+\subsection{Domains and conditions}\label{sec:data}
+We use three synthetic decision tasks with the same five conditions (Table~\ref{tab:conditions}): loan approval (5 numeric fields), clinical triage referral (5 vital signs plus self-reported severity), and hiring screening (6 fields, no protected attributes). Synthetic data gives exact control over which information is missing or conflicting. It is a diagnostic probe, not a model of real underwriting, clinical or hiring practice. Cases are drawn from a seeded generator with an independent random stream per condition; the dataset hash is reported in Appendix~\ref{app:repro}. We use 50 cases per condition for loans and 30 for each of the other domains.
+
+\begin{table}[t]\centering\small
+\caption{Conditions (identical across domains).}\label{tab:conditions}
+\begin{tabular}{@{}lp{5.6cm}@{}}\toprule
+Normal & Complete inputs drawn from the full range.\\
+Missing & 1--2 randomly chosen fields set to \texttt{null}.\\
+Contradictory & Fields that conflict (e.g.\ high income with debt above income and under one year of employment; alarming vitals with ``mild'' self-report; more years of experience than years since graduation).\\
+Stress & Elevated but ambiguous risk, with some fields missing at random.\\
+No-uncertainty & Complete, clearly low-risk cases (varied, not one fixed case): negative control.\\\bottomrule
+\end{tabular}\end{table}
+
+\subsection{Normative policy}
+Each domain has a written policy (Appendix~\ref{app:policy}) mapping a case to one of \emph{proceed}, \emph{defer} or \emph{decline}. Any missing field or conflict maps to \emph{defer}; clear thresholds map to \emph{proceed} or \emph{decline}. The policy is deliberately simple and is used only to score deferral, not to define correct lending, clinical or hiring decisions.
+
+\subsection{Models and generation}
+We evaluate Mistral-7B, LLaMA-3-8B, Qwen2.5-7B, Phi-3-Medium (14B) and DeepSeek-R1-Distill-Qwen-7B. All are served locally with Ollama \res{version}. The exact model tags and SHA-256 digests are listed in Table~\ref{tab:models}. Generation uses temperature 0.7, top-$p$ 0.9, a 4096-token context and at most 1024 new tokens, with three fixed seeds per loan case and one seed for the other domains. The primary analysis uses the first sample; the others measure stability. Hardware: \res{Apple M3 Max, 36\,GB unified memory}. For DeepSeek-R1, reasoning text is captured separately and excluded from all detectors.
+\begin{table}[t]\centering\small\caption{Models.}\label{tab:models}
+\res{generated from results/models.json.txt}\end{table}
+
+\subsection{Protocol and parsing}
+Each model receives the prompt in Appendix~\ref{app:prompts} once per case, with no retries, tools or self-correction. Outputs are parsed by removing reasoning blocks and code fences and extracting the first JSON object. Outputs that fail to parse, or that lack a required key, are recorded as format failures and excluded from behavioural rates. Format compliance is reported per model (Table~\ref{tab:compliance}). Raw outputs are archived.
+
+\subsection{Assumption classification}
+Each stated assumption receives one or more tags (Table~\ref{tab:tags}) from deterministic rules that compare the text with the case input: field lexicons identify which fields an assumption refers to, and the input tells us whether those fields are missing. Numbers are compared only on the field's own scale. A tag's severity is fixed; an assumption takes its most severe tag. The rules were written before the human annotation and frozen as version v2.0. Their accuracy is measured in Sec.~\ref{sec:validation}, and misclassified examples are shown in Appendix~\ref{app:errors}.
+\begin{table}[t]\centering\small\caption{Assumption tags and severities.}\label{tab:tags}
+\begin{tabular}{@{}llp{3.6cm}@{}}\toprule
+Tag & Severity & Example (loan)\\\midrule
+acknowledges\_gap & benign & ``Income is not provided.''\\
+restates\_input & benign & ``Good credit score.''\\
+data\_validity & benign & ``Figures are accurate.''\\
+generic\_premise & benign & ``Credit score indicates risk.''\\
+fills\_missing & escalated & ``No existing debt'' (debt null)\\
+forward\_looking & escalated & ``Income will remain stable for 5 years.''\\
+extra\_schema\_fact & escalated & ``The loan is for a valid purpose.''\\
+asserts\_verification & escalated & ``Income has been verified.''\\
+contradicts\_input & degenerate & ``15 years of employment'' (input: 3)\\\bottomrule
+\end{tabular}\end{table}
+
+\subsection{Human validation}\label{sec:validation-method}
+\res{k} annotators, blind to model identity and detector output, labelled a stratified sample of \res{N} assumptions (stratified by condition and detector severity) following the guideline in Appendix~\ref{app:annotation}, after a 20-item calibration round. We report pairwise Cohen's $\kappa$, Fleiss' $\kappa$ and Krippendorff's $\alpha$ (nominal) with a 1000-sample bootstrap interval \cite{krippendorff2011alpha}. Majority labels, with ties adjudicated, form a gold set against which we score detectors v1 (hedge words, used in our earlier version) and v2.
+
+\subsection{Statistical analysis}
+Rates are reported with Wilson 95\% intervals \cite{wilson1927}. Differences between conditions use $\chi^2$ tests of independence with Cram\'er's $V$. Uncertain conditions are compared with the negative control using Fisher's exact test, and models are compared pairwise the same way, with Holm correction \cite{holm1979} and Cohen's $h$. To separate condition effects from verbosity, we fit per-model logistic regressions of each signal on condition with log response length as a covariate. For confidence, we report the shift between complete and deficient inputs, the AUROC for separating them, and Brier score and ECE against agreement with the policy.

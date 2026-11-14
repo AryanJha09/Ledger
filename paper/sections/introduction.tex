@@ -1,0 +1,14 @@
+\section{Introduction}
+In many high-stakes settings the first question is not which action is best but whether the evidence supports acting at all. Human decision makers facing missing or conflicting information typically reduce uncertainty, gather more information, or defer \cite{lipshitz1997coping}. As language models are given more autonomy, a natural question is whether they show comparable restraint \cite{amodei2016concrete}.
+
+A widely used safeguard is to give the model a deferral option (``review'', ``escalate''). Prior work on selective prediction and abstention treats the decision to abstain as the object of evaluation \cite{geifman2017selective,wen2025abstention}. We argue that this is insufficient for agentic use: a model can defer while justifying the deferral with premises that are not in the data, or can commit to an action while openly acknowledging that key information is missing. Neither outcome is visible from the decision alone.
+
+We therefore evaluate what models \emph{state} alongside their decisions. Under a fixed protocol, each model returns a decision, a confidence value and an explicit list of assumptions. We classify each stated assumption against the case input and score each decision against a written normative policy. This allows us to separate four behaviours that a deferral rate conflates: appropriate restraint, masked overreach (deferral alongside unsupported premises), risky commitment (acting when the policy calls for deferral) and over-deferral.
+
+Throughout, our evidence is \emph{output-level}: we analyse generated text and do not claim access to internal computation. Stated assumptions may not reflect the factors that actually drove a decision; we treat them as a behavioural record that a downstream system or auditor would actually see.
+
+\textbf{Contributions.}
+(1) An evaluation protocol for autonomous decisions under controlled epistemic stress, with a normative action per case, so that deferral can be scored rather than counted.
+(2) An input-grounded taxonomy of stated assumptions (benign, escalated, degenerate) with an annotation guideline, inter-rater reliability, and detector validation against human labels.
+(3) A cross-domain study of five open-weight models in three domains with interval estimates, significance tests, a negative control, a verbosity control, prompt-sensitivity and sampling-stability analyses.
+(4) A released, containerised pipeline that regenerates every number in the paper from raw logs.

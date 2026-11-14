@@ -1,0 +1,22 @@
+\section{Results}\label{sec:results}
+% Numbers in this section are written only from results/main/report/*.csv.
+\subsection{Format compliance}\label{sec:compliance}
+\begin{table}[t]\centering\scriptsize\caption{Format compliance per model.}\label{tab:compliance}
+\IfFileExists{../results/main/report/t0_compliance.tex}{\input{../results/main/report/t0_compliance.tex}}{\res{t0\_compliance}}
+\end{table}
+\res{Describe compliance. Mention that in our earlier version, unparsed outputs had been replaced by a default deferral; correcting this is why LLaMA-3, DeepSeek-R1 and Phi-3 results differ from that version.}
+
+\subsection{Detector validity}\label{sec:validation}
+\res{Agreement statistics; v1 vs v2 precision/recall/F1 on the unsupported class; main error types.}
+
+\subsection{Decisions versus the normative policy}
+\res{Table t2 per domain: decision mix, agreement with policy; Fig.~3 quadrants as rates: appropriate restraint, masked overreach, risky commitment, over-deferral.}
+
+\subsection{Unsupported assumptions by condition}
+\res{t3/t4 per domain, Fig.~unsupported-by-condition with CIs; negative control comparison t5; verbosity-adjusted odds ratios t6.}
+
+\subsection{Confidence}
+\res{t8: does confidence drop under deficient inputs (AUROC), granularity of values, unjustified confidence.}
+
+\subsection{Robustness}
+\res{t9 decision stability across seeds; t10 prompt sensitivity; confidence threshold sensitivity.}

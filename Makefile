@@ -2,7 +2,7 @@
 PY ?= python
 CONFIG ?= configs/main.yaml
 
-.PHONY: help test pull models smoke run-main run-ablation report audit-v1 annotation agreement reproduce
+.PHONY: help test pull models smoke run-main run-ablation report audit-v1 annotation agreement reproduce paper
 
 help:
 	@echo "make test          unit tests"
@@ -16,6 +16,7 @@ help:
 	@echo "make annotation    blinded 300-item annotation sheet"
 	@echo "make agreement     inter-rater agreement + detector validation"
 	@echo "make reproduce     report + audit from saved logs (no models needed)"
+	@echo "make paper         build paper/main_ieee.pdf (needs LaTeX)"
 
 test:
 	$(PY) -m pytest -q
@@ -50,3 +51,5 @@ agreement:
 	$(PY) -m ledger2.agreement --labels annotation/labels/*.csv --key annotation/sample_key.csv --out results/validation
 
 reproduce: audit-v1 report
+paper:
+	cd paper && $(PY) build_appendix.py && latexmk -pdf -interaction=nonstopmode main_ieee.tex
