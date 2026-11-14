@@ -1,0 +1,2 @@
+model_key,unsupported_assumption,fills_missing,forward_looking,extra_schema_fact,risk_rationalization,unjustified_confidence,gap_acknowledged,masked_overreach,appropriate_restraint,risky_commitment,n
+qwen2_5_7b,"0% [0, 28] (0/10)","0% [0, 28] (0/10)","0% [0, 28] (0/10)","0% [0, 28] (0/10)","0% [0, 28] (0/10)","0% [0, 28] (0/10)","10% [2, 40] (1/10)","0% [0, 28] (0/10)","10% [2, 40] (1/10)","60% [31, 83] (6/10)",10

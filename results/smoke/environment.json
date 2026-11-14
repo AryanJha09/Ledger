@@ -1,0 +1,13 @@
+{
+  "ollama_version": "0.15.0",
+  "hardware": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.12.14",
+    "gpu": null
+  },
+  "code_revision": "79b6e5113bcf5e0790594f762fee544f197bb5ce",
+  "config_file": "configs/smoke.yaml",
+  "config_sha": "5455c4c41c0441ce"
+}
