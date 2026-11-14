@@ -12,11 +12,11 @@ json_mode: false
 # Note: v1 used "llama3:8b-instruct"; the Ollama library tag for the
 # instruction-tuned 8B model is "llama3:8b".
 models:
-  - {key: mistral_7b,     tag: "mistral:7b",     digest: null}
-  - {key: llama3_8b,      tag: "llama3:8b",      digest: null}
-  - {key: qwen2_5_7b,     tag: "qwen2.5:7b",     digest: null}
-  - {key: phi3_medium,    tag: "phi3:medium",    digest: null}
-  - {key: deepseek_r1_7b, tag: "deepseek-r1:7b", digest: null, think: true}
+  - {key: mistral_7b,     tag: "mistral:7b",     digest: "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf"}
+  - {key: llama3_8b,      tag: "llama3:8b",      digest: "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1"}
+  - {key: qwen2_5_7b,     tag: "qwen2.5:7b",     digest: "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e"}
+  - {key: phi3_medium,    tag: "phi3:medium",    digest: "cf611a26b048362dce8f39ef9bb1c9c33c06b70408fe88eb2286253c707d7471"}
+  - {key: deepseek_r1_7b, tag: "deepseek-r1:7b", digest: "755ced02ce7befdb13b7ca74e1e4d08cddba4986afdb63a480f2c93d3140383f", think: true}
 
 sampling:
   # Three seeded samples per loan case at T=0.7 give within-case variability;
