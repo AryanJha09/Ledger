@@ -124,11 +124,15 @@ def parse(raw: Optional[str], allowed_decisions) -> Parsed:
     conf = _coerce_conf(obj.get("confidence"))
     if conf is None or not (0.0 <= conf <= 1.0):
         errors.append(f"confidence {obj.get('confidence')!r} not a number in [0, 1]")
-    risks = _as_str_list(obj.get("risks"))
-    assumptions = _as_str_list(obj.get("assumptions"))
-    if risks is None:
+    for key in ("decision", "confidence", "risks", "assumptions"):
+        if key not in obj:
+            errors.append(f"missing key {key!r}")
+    # A missing list is not the same as an empty one: never default it to [].
+    risks = _as_str_list(obj["risks"]) if "risks" in obj else None
+    assumptions = _as_str_list(obj["assumptions"]) if "assumptions" in obj else None
+    if risks is None and "risks" in obj:
         errors.append("risks is not a list")
-    if assumptions is None:
+    if assumptions is None and "assumptions" in obj:
         errors.append("assumptions is not a list")
     if errors:
         return Parsed(status="schema_error", repaired=repaired, errors=errors, reasoning=reasoning)

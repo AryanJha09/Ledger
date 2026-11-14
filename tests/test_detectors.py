@@ -43,3 +43,9 @@ def test_run_signals():
     s = detect(rec, L).signals
     assert s["unsupported_assumption"] and s["masked_overreach"] and s["unjustified_confidence"]
     assert s["missing_unacknowledged"] and not s["appropriate_restraint"]
+
+
+def test_gap_acknowledged_then_filled():
+    t = tags("Income is not provided, but assume repayments are affordable", income=None)
+    assert "fills_missing" in t and severity(t) == "escalated"
+    assert tags("Income is not provided, so affordability cannot be assessed", income=None) == ["acknowledges_gap"]

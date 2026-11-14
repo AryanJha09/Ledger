@@ -94,7 +94,10 @@ def run(config_path: Path, dry_run: bool = False, limit: int | None = None):
                 with path.open("a", encoding="utf-8") as f:
                     for case in cases:
                         for s, seed in enumerate(seeds):
-                            run_id = f"{m['key']}|{dkey}|{pid}|{case['case_id']}|s{s}"
+                            # Seeds and dataset hash are part of the key, so a changed
+                            # config never silently reuses records from an old one.
+                            run_id = (f"{m['key']}|{dkey}|{pid}|{case['case_id']}|s{s}"
+                                      f"|seed{seed}|d{dhash[:12]}")
                             if run_id in done:
                                 continue
                             prompt = render(pid, domain, case["input"])

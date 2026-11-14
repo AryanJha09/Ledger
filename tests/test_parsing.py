@@ -30,3 +30,8 @@ def test_failures_are_never_turned_into_decisions():
                         ('{"decision": "maybe", "confidence": 2}', "schema_error")]:
         p = parse(raw, D)
         assert p.status == status and p.data is None
+
+
+def test_missing_list_keys_are_schema_errors():
+    p = parse('{"decision": "review", "confidence": 0.5, "risks": []}', D)
+    assert p.status == "schema_error" and any("assumptions" in e for e in p.errors)

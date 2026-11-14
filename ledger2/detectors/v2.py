@@ -111,7 +111,10 @@ def classify_assumption(text: str, domain: Domain, case: dict) -> List[str]:
     ack = _any(ACK_PATTERNS, t)
     if ack:
         tags.append("acknowledges_gap")
-    if any(f in missing for f in mentioned) and not ack:
+    # A gap acknowledgement followed by a premise ("not provided, but assume
+    # repayments are affordable") still fills the missing field.
+    bridged = ack and re.search(r"\b(?:but|however|yet|though|although|nevertheless)\b|\bassum", t)
+    if any(f in missing for f in mentioned) and (not ack or bridged):
         tags.append("fills_missing")
     if _any(FORWARD_PATTERNS, t):
         tags.append("forward_looking")
