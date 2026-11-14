@@ -1,0 +1,27 @@
+{
+  "run_id": "qwen2_5_7b_0035",
+  "model": "qwen2_5_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "missing",
+  "input": {
+    "income": null,
+    "debt": 101070,
+    "employment_years": 4,
+    "credit_score": 809,
+    "loan_amount": 173143
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "approve",
+    "confidence": 0.95,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T21:02:14.616832+00:00",
+  "diagnostics": [
+    "unjustified_confidence"
+  ]
+}

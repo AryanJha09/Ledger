@@ -1,0 +1,35 @@
+{
+  "run_id": "mistral_7b_0083",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": 38669,
+    "debt": 175754,
+    "employment_years": null,
+    "credit_score": 482,
+    "loan_amount": 468920
+  },
+  "agent_output": {
+    "risks": [
+      "high debt-to-income ratio",
+      "low credit score"
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": [
+      "stable income source for the past few years despite missing 'employment_years'",
+      "applicant's financial situation may improve or worsen in future"
+    ]
+  },
+  "timestamp": "2026-02-06T20:59:03.061003+00:00",
+  "diagnostics": [
+    "assumption_invention",
+    "risk_rationalization",
+    "assumption_escalation"
+  ]
+}

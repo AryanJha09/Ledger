@@ -1,0 +1,26 @@
+{
+  "run_id": "deepseek_r1_7b_0016",
+  "model": "deepseek_r1_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 33224,
+    "debt": 78940,
+    "employment_years": 34,
+    "credit_score": 658,
+    "loan_amount": 179641
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "review",
+    "confidence": 0.5,
+    "assumptions": [],
+    "meta_error": "Invalid JSON output from model"
+  },
+  "timestamp": "2026-02-06T21:13:25.231827+00:00",
+  "diagnostics": []
+}

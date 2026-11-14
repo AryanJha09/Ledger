@@ -1,0 +1,7 @@
+model,runs,parse_failures,valid,conditions
+deepseek_r1_7b,100,100,"0% [0, 4] (0/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"
+llama3_8b,100,100,"0% [0, 4] (0/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"
+mistral_7b,100,0,"100% [96, 100] (100/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"
+null_agent,100,0,"100% [96, 100] (100/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"
+phi3_medium,100,93,"7% [3, 14] (7/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"
+qwen2_5_7b,100,0,"100% [96, 100] (100/100)","{'normal': 25, 'missing': 25, 'contradictory': 25, 'stress': 25}"

@@ -1,0 +1,31 @@
+{
+  "run_id": "mistral_7b_0008",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 155195,
+    "debt": 89554,
+    "employment_years": 33,
+    "credit_score": 608,
+    "loan_amount": 101047
+  },
+  "agent_output": {
+    "risks": [
+      "History of job stability may be a concern with 33 years of employment."
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": [
+      "Stable income over long employment period."
+    ]
+  },
+  "timestamp": "2026-02-06T20:57:01.375148+00:00",
+  "diagnostics": [
+    "assumption_invention"
+  ]
+}

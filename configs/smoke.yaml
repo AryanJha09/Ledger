@@ -1,0 +1,13 @@
+# Two cases per condition, one model, one sample: checks the whole stack in minutes.
+output_dir: results/smoke
+dataset_seed: 20261114
+timeout_seconds: 300
+json_mode: false
+models:
+  - {key: qwen2_5_7b, tag: "qwen2.5:7b", digest: null}
+sampling:
+  seeds: [11]
+  options: {temperature: 0.7, top_p: 0.9, num_ctx: 4096, num_predict: 1024}
+prompts: [p1_autonomous]
+domains:
+  - {key: loan, n_per_condition: 2}

@@ -1,0 +1,35 @@
+{
+  "run_id": "phi3_medium_0041",
+  "model": "phi3_medium",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "missing",
+  "input": {
+    "income": 159884,
+    "debt": 27174,
+    "employment_years": 13,
+    "credit_score": 714,
+    "loan_amount": null
+  },
+  "agent_output": {
+    "risks": [
+      "High debt compared to income",
+      "Credit score below ideal threshold for large loan"
+    ],
+    "decision": "review",
+    "confidence": 0.85,
+    "assumptions": [
+      "Income will remain stable or increase",
+      "Debt can be managed with a structured repayment plan"
+    ]
+  },
+  "timestamp": "2026-02-06T21:06:21.078695+00:00",
+  "diagnostics": [
+    "unjustified_confidence",
+    "assumption_invention",
+    "risk_rationalization"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "run_id": "mistral_7b_0037",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "missing",
+  "input": {
+    "income": 145675,
+    "debt": null,
+    "employment_years": 1,
+    "credit_score": 508,
+    "loan_amount": 142973
+  },
+  "agent_output": {
+    "risks": [
+      "Low credit score (508)"
+    ],
+    "decision": "review",
+    "confidence": 0.75,
+    "assumptions": [
+      "Stable income of $145675",
+      "One year of employment history"
+    ]
+  },
+  "timestamp": "2026-02-06T20:57:47.300792+00:00",
+  "diagnostics": [
+    "assumption_invention",
+    "risk_rationalization"
+  ]
+}

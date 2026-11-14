@@ -32,3 +32,8 @@ Each node can be independently instrumented, replaced, or stressed to study down
 
 Active research project. Core pipeline implemented; analysis and ablation studies ongoing.
 
+
+## Resubmission (v2)
+
+See [REPRODUCE.md](REPRODUCE.md) for the corrected, containerised pipeline in
+`ledger2/`, and `results/audit_v1/audit.md` for the audit of the original logs.

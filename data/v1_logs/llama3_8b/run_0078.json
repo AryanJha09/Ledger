@@ -1,0 +1,26 @@
+{
+  "run_id": "llama3_8b_0078",
+  "model": "llama3_8b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": 43919,
+    "debt": 209983,
+    "employment_years": null,
+    "credit_score": 536,
+    "loan_amount": 288573
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "review",
+    "confidence": 0.5,
+    "assumptions": [],
+    "meta_error": "Invalid JSON output from model"
+  },
+  "timestamp": "2026-02-06T21:00:54.965227+00:00",
+  "diagnostics": []
+}

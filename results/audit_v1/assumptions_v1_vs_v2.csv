@@ -1,0 +1,108 @@
+model,condition,assumption,v1,v2,v2_tags
+mistral_7b,normal,Applicant's income and debt are stable for the next 5 years,benign,escalated,forward_looking
+mistral_7b,normal,Applicant will maintain or improve their credit score,benign,escalated,forward_looking
+mistral_7b,normal,Stable employment history,benign,benign,restates_input
+mistral_7b,normal,Good credit score,benign,benign,restates_input
+mistral_7b,normal,Applicant's income and debt levels are stable over time.,escalated,escalated,forward_looking
+mistral_7b,normal,Applicant will maintain the same level of employment for the duration of the loan.,benign,escalated,forward_looking
+mistral_7b,normal,stable employment history will continue,benign,escalated,forward_looking
+mistral_7b,normal,applicant's income will remain consistent,benign,escalated,forward_looking
+mistral_7b,normal,Steady employment history,benign,benign,restates_input
+mistral_7b,normal,Stable employment history,benign,benign,restates_input
+mistral_7b,normal,Sufficient credit score for the loan amount,benign,benign,restates_input
+mistral_7b,normal,Stable income over long employment period.,benign,benign,restates_input
+mistral_7b,normal,Applicant's income remains constant,benign,escalated,forward_looking
+mistral_7b,normal,Debt and loan amount remain the same,benign,escalated,forward_looking
+mistral_7b,normal,Income and debt figures are accurate.,benign,benign,data_validity
+mistral_7b,normal,Credit score calculation method is correct.,benign,benign,data_validity
+mistral_7b,normal,Applicant's income can cover the new loan amount and existing debt with some margin,benign,benign,restates_input
+mistral_7b,normal,Applicant's financial situation is stable or improving based on employment years,benign,benign,restates_input
+mistral_7b,normal,Applicant's income and expenses remain consistent,benign,escalated,forward_looking|extra_schema_fact
+mistral_7b,normal,Applicant will maintain the current credit score,benign,escalated,forward_looking
+mistral_7b,normal,Stable employment history,benign,benign,restates_input
+mistral_7b,normal,Credit score as a predictor of future behavior,benign,escalated,forward_looking
+mistral_7b,normal,Stable income for the near future,benign,escalated,forward_looking
+mistral_7b,normal,Stable employment history,benign,benign,restates_input
+mistral_7b,normal,Adequate income to support loan payments,benign,benign,restates_input
+mistral_7b,normal,Stable employment history,benign,benign,restates_input
+mistral_7b,normal,Good credit score,benign,benign,restates_input
+mistral_7b,normal,Applicant's income and debt data are accurate.,benign,benign,data_validity
+mistral_7b,normal,Credit score of 779 is stable.,benign,benign,restates_input
+mistral_7b,normal,Stable employment for the next 3 years with no change in income or employment status,benign,escalated,forward_looking
+mistral_7b,normal,industry standard for minimum employment years is 20,benign,escalated,extra_schema_fact
+mistral_7b,missing,Income and expenses are accurately reported,benign,escalated,extra_schema_fact
+mistral_7b,missing,Applicant's financial situation will not drastically change in the near future,benign,escalated,forward_looking
+mistral_7b,missing,Stable employment history not provided,benign,benign,acknowledges_gap
+mistral_7b,missing,Stable employment history,benign,escalated,fills_missing
+mistral_7b,missing,Excellent credit score,benign,benign,restates_input
+mistral_7b,missing,Steady employment history,benign,benign,restates_input
+mistral_7b,missing,Stable income,benign,benign,restates_input
+mistral_7b,missing,Applicant's income and debt are consistent and accurate,benign,benign,data_validity
+mistral_7b,missing,Credit score is an indicator of creditworthiness,benign,benign,restates_input
+mistral_7b,missing,No changes in employment or financial status are expected in the near future,benign,escalated,forward_looking
+mistral_7b,missing,Stable income of $145675,benign,benign,restates_input
+mistral_7b,missing,One year of employment history,benign,benign,restates_input
+mistral_7b,missing,Stable employment history of 13 years,benign,benign,restates_input
+mistral_7b,missing,Stable income over 40 years,benign,benign,restates_input
+mistral_7b,missing,No existing debt,benign,escalated,fills_missing
+mistral_7b,missing,Stable employment history,benign,benign,restates_input
+mistral_7b,missing,Applicant's income and employment status are stable for the loan term.,benign,escalated,fills_missing|forward_looking
+mistral_7b,missing,The loan amount is for a necessary expense.,benign,benign,restates_input
+mistral_7b,missing,Income level may be stable due to employment years (33),escalated,benign,restates_input
+mistral_7b,missing,Stable employment history of 15 years,benign,benign,restates_input
+mistral_7b,contradictory,applicant's income may increase in the future,escalated,escalated,forward_looking
+mistral_7b,contradictory,applicant may secure employment in the near future,escalated,escalated,forward_looking
+mistral_7b,contradictory,Applicant's income is stable and will continue for the loan term,benign,escalated,forward_looking
+mistral_7b,contradictory,Applicant's ability to manage high debt levels,benign,benign,restates_input
+mistral_7b,contradictory,Applicant's income and debt figures are accurate,benign,benign,data_validity
+mistral_7b,contradictory,Applicant will maintain current employment status or secure new employment in the near future,benign,escalated,forward_looking
+mistral_7b,contradictory,Stable income in the future,escalated,escalated,forward_looking
+mistral_7b,contradictory,Adequate justification for high loan amount,benign,benign,restates_input
+mistral_7b,contradictory,Applicant's income will remain consistent,benign,escalated,forward_looking
+mistral_7b,contradictory,The applicant's income and debt values are accurate and up to date.,benign,benign,data_validity
+mistral_7b,contradictory,The loan amount requested is consistent with the applicant's financial situation.,benign,benign,restates_input
+mistral_7b,contradictory,applicant's income is consistent and stable,benign,benign,restates_input
+mistral_7b,contradictory,applicant's ability to provide additional documentation to support income and employment history,benign,escalated,asserts_verification
+mistral_7b,contradictory,stable income for future employment years,benign,escalated,forward_looking
+mistral_7b,contradictory,stable income for the future,benign,escalated,forward_looking
+mistral_7b,contradictory,ability to manage high debt level,benign,benign,restates_input
+mistral_7b,contradictory,stable income is expected in the near future,benign,escalated,forward_looking
+mistral_7b,contradictory,applicant has a good credit history,benign,benign,restates_input
+mistral_7b,contradictory,Stable employment history is not available,benign,benign,acknowledges_gap
+mistral_7b,contradictory,Credit score is relatively high,benign,benign,restates_input
+mistral_7b,contradictory,applicant's income and expenses remain consistent,benign,escalated,forward_looking|extra_schema_fact
+mistral_7b,contradictory,applicant's credit score will not significantly decrease,benign,escalated,forward_looking
+mistral_7b,contradictory,stable income despite short employment history,benign,benign,restates_input
+mistral_7b,contradictory,credit score as a reliable indicator of financial responsibility,benign,benign,data_validity
+mistral_7b,contradictory,Applicant's income is stable and consistent,benign,benign,restates_input
+mistral_7b,contradictory,Loan amount is reasonable given credit score,benign,benign,restates_input
+mistral_7b,contradictory,steady income for the next year,benign,escalated,forward_looking
+mistral_7b,contradictory,ability to reduce current debt levels,benign,benign,restates_input
+mistral_7b,stress,Applicant's income may increase in the future,escalated,escalated,forward_looking
+mistral_7b,stress,Loan amount might be negotiable,escalated,benign,restates_input
+mistral_7b,stress,applicant's income level may increase in the future,escalated,escalated,forward_looking
+mistral_7b,stress,applicant's employment status is stable or will be secured,benign,escalated,fills_missing|forward_looking
+mistral_7b,stress,Applicant's income and debt are stable over the next few years,benign,escalated,forward_looking
+mistral_7b,stress,Loan amount is for a fixed term,benign,benign,restates_input
+mistral_7b,stress,stable income source for the past few years despite missing 'employment_years',benign,benign,acknowledges_gap
+mistral_7b,stress,applicant's financial situation may improve or worsen in future,escalated,escalated,forward_looking
+mistral_7b,stress,Applicant's income and debt are stable and will continue to be so,benign,escalated,forward_looking
+mistral_7b,stress,The loan amount requested is needed for a valid purpose,benign,escalated,extra_schema_fact
+mistral_7b,stress,stable employment in the past or future,benign,escalated,fills_missing|forward_looking
+mistral_7b,stress,ability to repay loan despite high debt,benign,benign,restates_input
+mistral_7b,stress,Applicant's income and expenses are stable,benign,escalated,extra_schema_fact
+mistral_7b,stress,Loan amount is for a fixed period,benign,benign,restates_input
+mistral_7b,stress,Applicant's employment history is not provided,benign,benign,acknowledges_gap
+mistral_7b,stress,stable_employment_history,benign,benign,restates_input
+mistral_7b,stress,steady_income_growth,benign,escalated,forward_looking
+mistral_7b,stress,stable_income,benign,benign,restates_input
+mistral_7b,stress,consistent_debt_repayment,benign,benign,restates_input
+mistral_7b,stress,Stable employment history is not provided,benign,benign,acknowledges_gap
+phi3_medium,normal,The applicant's debt-to-income ratio is high.,benign,benign,restates_input
+phi3_medium,normal,The credit score suggests a potential risk.,escalated,benign,restates_input
+phi3_medium,missing,Income will remain stable or increase,benign,escalated,forward_looking
+phi3_medium,missing,Debt can be managed with a structured repayment plan,benign,benign,restates_input
+qwen2_5_7b,missing,Employment years may not fully indicate current employment status.,escalated,benign,restates_input
+qwen2_5_7b,missing,Credit score is the primary risk factor given lack of other data.,benign,benign,acknowledges_gap
+qwen2_5_7b,stress,"Employment years and credit score are not provided, which may affect the risk assessment.",escalated,benign,acknowledges_gap
+qwen2_5_7b,stress,"Employment years and credit score are not provided, hence their impact on decision cannot be accurately assessed.",benign,benign,acknowledges_gap

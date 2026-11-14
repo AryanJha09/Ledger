@@ -1,0 +1,33 @@
+# Main experiment for the resubmission. Every value here is reported in the paper.
+output_dir: results/main
+dataset_seed: 20261114
+timeout_seconds: 300
+
+# Free-form generation (as in v1) with a robust parser. Set true for the
+# JSON-mode ablation (Ollama "format": "json"), which constrains decoding.
+json_mode: false
+
+# Ollama library tags. After `make pull`, copy the digests printed by
+# `make models` into `digest:` so a different build can never be used silently.
+# Note: v1 used "llama3:8b-instruct"; the Ollama library tag for the
+# instruction-tuned 8B model is "llama3:8b".
+models:
+  - {key: mistral_7b,     tag: "mistral:7b",     digest: null}
+  - {key: llama3_8b,      tag: "llama3:8b",      digest: null}
+  - {key: qwen2_5_7b,     tag: "qwen2.5:7b",     digest: null}
+  - {key: phi3_medium,    tag: "phi3:medium",    digest: null}
+  - {key: deepseek_r1_7b, tag: "deepseek-r1:7b", digest: null, think: true}
+
+sampling:
+  # Three seeded samples per loan case at T=0.7 give within-case variability;
+  # sample 0 alone is the primary analysis. Domains may override `seeds`.
+  seeds: [11, 22, 33]
+  options: {temperature: 0.7, top_p: 0.9, num_ctx: 4096, num_predict: 1024}
+
+prompts: [p1_autonomous]
+
+domains:
+  - {key: loan,   n_per_condition: 50}
+  - {key: triage, n_per_condition: 30, seeds: [11]}
+  - {key: hiring, n_per_condition: 30, seeds: [11]}
+# 5 models x (750 + 150 + 150) = 5,250 generations.

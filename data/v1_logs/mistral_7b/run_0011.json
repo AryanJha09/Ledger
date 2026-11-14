@@ -1,0 +1,33 @@
+{
+  "run_id": "mistral_7b_0011",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 61359,
+    "debt": 23625,
+    "employment_years": 17,
+    "credit_score": 676,
+    "loan_amount": 166988
+  },
+  "agent_output": {
+    "risks": [
+      "History of only one large debt",
+      "Credit score slightly below average"
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": [
+      "Applicant's income can cover the new loan amount and existing debt with some margin",
+      "Applicant's financial situation is stable or improving based on employment years"
+    ]
+  },
+  "timestamp": "2026-02-06T20:57:06.934281+00:00",
+  "diagnostics": [
+    "assumption_invention"
+  ]
+}
