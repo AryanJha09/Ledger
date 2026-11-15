@@ -1,4 +1,4 @@
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 In many high-stakes settings the first question is not which action is best but whether the evidence supports acting at all. Human decision makers facing missing or conflicting information typically reduce uncertainty, gather more information, or defer \cite{lipshitz1997coping}. As language models are given more autonomy, a natural question is whether they show comparable restraint \cite{amodei2016concrete}.
 
 A widely used safeguard is to give the model a deferral option (``review'', ``escalate''). Prior work on selective prediction and abstention treats the decision to abstain as the object of evaluation \cite{geifman2017selective,wen2025abstention}. We argue that this is insufficient for agentic use: a model can defer while justifying the deferral with premises that are not in the data, or can commit to an action while openly acknowledging that key information is missing. Neither outcome is visible from the decision alone.
