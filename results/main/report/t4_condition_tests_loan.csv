@@ -1,0 +1,16 @@
+model,signal,test,p,cramers_v,dof
+deepseek_r1_7b,unsupported_assumption,chi2,8.484269483579445e-05,0.31735482447772273,4.0
+deepseek_r1_7b,risk_rationalization,chi2,0.08262560215569005,0.1866468063098978,4.0
+deepseek_r1_7b,deferred,chi2,2.2682603543443776e-07,0.3925138580546472,4.0
+llama3_8b,unsupported_assumption,none,,0.0,
+llama3_8b,risk_rationalization,none,,0.0,
+llama3_8b,deferred,chi2,1.1933153320918084e-21,0.6459144368800831,4.0
+mistral_7b,unsupported_assumption,chi2,0.38391962028604576,0.12909944487358055,4.0
+mistral_7b,risk_rationalization,chi2,1.4473513085270534e-17,0.5834249012380388,4.0
+mistral_7b,deferred,none,,0.0,
+phi3_medium,unsupported_assumption,chi2,4.434677217723669e-05,0.3179458890719048,4.0
+phi3_medium,risk_rationalization,chi2,1.529747838288533e-07,0.3864939758404985,4.0
+phi3_medium,deferred,chi2,9.004781837386845e-16,0.553644054542659,4.0
+qwen2_5_7b,unsupported_assumption,chi2,0.0007117325916260305,0.27726614167112307,4.0
+qwen2_5_7b,risk_rationalization,chi2,8.142557388663343e-05,0.30956959368344517,4.0
+qwen2_5_7b,deferred,chi2,8.449828871519239e-18,0.5871886815990808,4.0
