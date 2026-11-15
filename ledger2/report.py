@@ -45,6 +45,7 @@ def add_signals(df: pd.DataFrame, conf_threshold: float = 0.8) -> pd.DataFrame:
             continue
         s = detect(r.to_dict(), get_domain(r["domain"]), conf_threshold)
         rows.append({**s.signals, "n_assumptions": s.n_assumptions,
+                     "n_escalated": sum(v != "benign" for v in s.severities),
                      "output_chars": s.output_chars,
                      "confidence": r["output"]["confidence"],
                      "decision": get_domain(r["domain"]).canonical(r["output"]["decision"])})
@@ -121,6 +122,32 @@ def consistency_table(df_all):
     return pd.DataFrame(rows)
 
 
+def disclosure_table(df):
+    """How much each model states at all, so that a 0% unsupported rate from
+    empty assumption lists is not read as restraint."""
+    rows = []
+    for m, g in df.groupby("model_key"):
+        stated = g[g.assumption_stated.astype(bool)]
+        n_ass = int(g.n_assumptions.sum())
+        n_esc = int(g.n_escalated.sum())
+        miss = g[g.condition == "missing"]
+        silent = g[(~g.assumption_stated.astype(bool)) & (~g.gap_acknowledged.astype(bool))
+                   & g.risky_commitment.astype(bool)]
+        rows.append({
+            "model": m,
+            "assumption_stated": st.fmt_rate(st.rate(len(stated), len(g))),
+            "mean_assumptions": round(float(g.n_assumptions.mean()), 2),
+            "unsupported_given_stated": st.fmt_rate(st.rate(
+                int(stated.unsupported_assumption.astype(bool).sum()), len(stated))),
+            "escalated_share_of_assumptions": st.fmt_rate(st.rate(n_esc, n_ass)),
+            "missing_unacknowledged_in_missing": st.fmt_rate(st.rate(
+                int(miss.missing_unacknowledged.astype(bool).sum()), len(miss))),
+            "silent_risky_commitment": st.fmt_rate(st.rate(len(silent), len(g))),
+            "n": len(g),
+        })
+    return pd.DataFrame(rows)
+
+
 def negative_control_tests(df, signals):
     rows = []
     for m, g in df.groupby("model_key"):
@@ -188,6 +215,10 @@ def build_report(runs_dir: Path, out: Path, conf_threshold: float = 0.8):
         emit(f"t1_signals_{dom}", f"Behavioural signal rates, {dom} (prompt {primary}, sample 0)",
              _rate_table(g, ["model_key"], KEY_SIGNALS),
              "Each cell: rate [Wilson 95% CI] (k/n).")
+        emit(f"t11_disclosure_{dom}", f"Premise disclosure, {dom}", disclosure_table(g),
+             "A model that lists no assumptions cannot score as unsupported, so signal rates must be "
+             "read together with how often anything is stated. silent_risky_commitment: commits where "
+             "the policy says defer, stating no assumption and acknowledging no gap.")
         emit(f"t2_decisions_{dom}", f"Decisions and agreement with the normative policy, {dom}",
              decision_table(g))
         emit(f"t3_by_condition_{dom}", f"Unsupported assumptions by condition, {dom}",
