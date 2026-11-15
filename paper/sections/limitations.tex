@@ -4,4 +4,5 @@
 \textbf{Lexical detectors.} The v2 rules are transparent but lexical; their error rates are reported (Sec.~\ref{sec:validation}) and every rate inherits them.
 \textbf{Models.} Five open-weight models of 7--14B parameters, quantised as distributed by Ollama. Larger or proprietary models may behave differently.
 \textbf{Prompting.} Requiring an explicit assumptions list may itself elicit assumptions; we measure sensitivity to prompt wording but not to removing the field.
+\textbf{Disclosure.} Four of five models list assumptions in a minority of runs, so their assumption-level rates rest on few runs, and the annotated sample is dominated by Mistral and DeepSeek-R1 outputs, which make up most of the stated assumptions.
 \textbf{Confidence.} Verbalized confidence is not a calibrated probability; we use it relationally.

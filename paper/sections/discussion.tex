@@ -1,2 +1,11 @@
-\section{Discussion}
-\res{Written after results. Scope: what the outputs show under this protocol. Avoid claims about internal reasoning. Address: is deferral a reliable proxy for restraint; which conditions drive unsupported premises; do findings replicate across domains; what this implies for agent design (e.g.\ auditing stated premises, not just deferral rates).}
+\section{Discussion}\label{sec:discussion}
+% Claims here restate Sec.~\ref{sec:results}; no new numbers.
+\textbf{Deferral is not a proxy for restraint.} The model that defers most (Mistral) is also the one whose deferrals most often rest on premises the input does not support, and it states them as often on clean control cases as on deficient ones. An evaluation that counts deferrals would rank it as the safest model in loan and hiring. Deferral and justification have to be scored separately.
+
+\textbf{Silence is not restraint either.} The models with the lowest unsupported-premise rates are those that list almost no premises. Where enough of them list premises to measure (Qwen2.5 and Phi-3 in loan), a share comparable to Mistral's is unsupported, and in missing-field cases they usually make no mention of the gap. A low rate of detected speculation therefore says as much about what a model chooses to disclose as about what it assumes. Any audit that relies on stated premises, including ours, has to report disclosure next to the failure rate, and an empty assumptions field should be treated as missing evidence, not as evidence of restraint.
+
+\textbf{Failure modes are model-specific and partly domain-specific.} Speculative but deferential output (Mistral) and silent commitment against the policy (DeepSeek-R1 in loan and hiring, LLaMA-3 in triage) are different failures that call for different safeguards. No model matches the policy in more than 88\% of cases in any domain, and the ranking of models changes between domains, so results from one domain should not be assumed to transfer.
+
+\textbf{Confidence does not compensate.} Stated confidence separates deficient from complete inputs only weakly and, for two models in triage, not at all. It cannot stand in for checking whether the evidence was sufficient.
+
+\textbf{Implications for agent design.} For deployments that route uncertain cases to people, our results suggest three checks that do not depend on model internals: (i)~compare each decision with an explicit policy for when deferral is required; (ii)~require stated premises and check them against the input, as the v2 detectors do; and (iii)~treat a commitment on deficient input with no stated premise as a failure to be flagged, not as a confident decision.
