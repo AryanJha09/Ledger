@@ -1,0 +1,6 @@
+model,mean_conf,distinct_values,conf_no_uncertainty,conf_missing,conf_contradictory,auroc_lower_conf_when_deficient,brier_vs_policy,ece_vs_policy
+deepseek_r1_7b,"0.80 [0.78, 0.82]",17,0.884,0.674,0.818,0.711,0.375,0.359
+llama3_8b,"0.65 [0.65, 0.66]",4,0.653,0.678,0.641,0.457,0.236,0.053
+mistral_7b,"0.72 [0.71, 0.73]",15,0.744,0.714,0.692,0.563,0.243,0.145
+phi3_medium,"0.71 [0.70, 0.73]",12,0.778,0.687,0.687,0.612,0.271,0.145
+qwen2_5_7b,"0.82 [0.80, 0.83]",9,0.951,0.808,0.79,0.556,0.322,0.232

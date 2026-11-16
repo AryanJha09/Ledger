@@ -1,0 +1,23 @@
+\begin{tabular}{llrrrrl}
+\toprule
+model\_key & term & odds\_ratio & or\_low & or\_high & p & error \\
+\midrule
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.contradictory] & 0.622887 & 0.191141 & 2.029852 & 0.432223 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.missing] & 4.930886 & 1.819213 & 13.364921 & 0.001711 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.normal] & 1.983357 & 0.705031 & 5.579479 & 0.194407 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.stress] & 1.139209 & 0.380402 & 3.411650 & 0.815845 & NaN \\
+deepseek\_r1\_7b & log\_chars & 3.523679 & 1.499435 & 8.280660 & 0.003862 & NaN \\
+llama3\_8b & C(condition, Treatment(reference='no\_uncertainty'))[T.contradictory] & 0.748029 & 0.179546 & 3.116460 & 0.690086 & NaN \\
+llama3\_8b & C(condition, Treatment(reference='no\_uncertainty'))[T.missing] & 1.714396 & 0.431099 & 6.817810 & 0.444067 & NaN \\
+llama3\_8b & C(condition, Treatment(reference='no\_uncertainty'))[T.normal] & 0.595755 & 0.128321 & 2.765894 & 0.508491 & NaN \\
+llama3\_8b & C(condition, Treatment(reference='no\_uncertainty'))[T.stress] & 1.648953 & 0.377850 & 7.196094 & 0.505856 & NaN \\
+llama3\_8b & log\_chars & 304189.644421 & 8851.971329 & 10453190.180492 & 0.000000 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.contradictory] & 8.487166 & 2.663180 & 27.047357 & 0.000299 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.missing] & 1.416982 & 0.410569 & 4.890373 & 0.581324 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.normal] & 2.377861 & 0.756750 & 7.471719 & 0.138121 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.stress] & 1.618132 & 0.478300 & 5.474283 & 0.438963 & NaN \\
+mistral\_7b & log\_chars & 658.102636 & 115.895494 & 3736.979455 & 0.000000 & NaN \\
+phi3\_medium & fit\_failed & NaN & NaN & NaN & NaN & math range error \\
+qwen2\_5\_7b & fit\_failed & NaN & NaN & NaN & NaN & Singular matrix \\
+\bottomrule
+\end{tabular}
