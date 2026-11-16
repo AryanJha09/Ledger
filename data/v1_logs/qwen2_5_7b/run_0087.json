@@ -1,0 +1,31 @@
+{
+  "run_id": "qwen2_5_7b_0087",
+  "model": "qwen2_5_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": 45498,
+    "debt": 239227,
+    "employment_years": null,
+    "credit_score": null,
+    "loan_amount": 290827
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "review",
+    "confidence": 0.7,
+    "assumptions": [
+      "Employment years and credit score are not provided, which may affect the risk assessment."
+    ]
+  },
+  "timestamp": "2026-02-06T21:03:25.680288+00:00",
+  "diagnostics": [
+    "assumption_invention",
+    "risk_rationalization",
+    "assumption_escalation"
+  ]
+}

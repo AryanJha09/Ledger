@@ -1,0 +1,32 @@
+{
+  "run_id": "mistral_7b_0066",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "contradictory",
+  "input": {
+    "income": 120504,
+    "debt": 167865,
+    "employment_years": 1,
+    "credit_score": 757,
+    "loan_amount": 167950
+  },
+  "agent_output": {
+    "risks": [
+      "short employment history"
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": [
+      "stable income for the future",
+      "ability to manage high debt level"
+    ]
+  },
+  "timestamp": "2026-02-06T20:58:34.044221+00:00",
+  "diagnostics": [
+    "assumption_invention"
+  ]
+}

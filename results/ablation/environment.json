@@ -1,0 +1,13 @@
+{
+  "ollama_version": "0.15.0",
+  "hardware": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.12.14",
+    "gpu": null
+  },
+  "code_revision": "24dafb5e55ea896b41c324e8ca23c7066775a3df",
+  "config_file": "configs/ablation_prompts.yaml",
+  "config_sha": "f47a2743fe9ce0ce"
+}

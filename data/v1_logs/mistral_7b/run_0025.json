@@ -1,0 +1,34 @@
+{
+  "run_id": "mistral_7b_0025",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "missing",
+  "input": {
+    "income": 98803,
+    "debt": 54792,
+    "employment_years": 9,
+    "credit_score": null,
+    "loan_amount": 112353
+  },
+  "agent_output": {
+    "risks": [
+      "Income exceeds debt but is close",
+      "High loan amount compared to income"
+    ],
+    "decision": "review",
+    "confidence": 0.7,
+    "assumptions": [
+      "Income and expenses are accurately reported",
+      "Applicant's financial situation will not drastically change in the near future"
+    ]
+  },
+  "timestamp": "2026-02-06T20:57:29.227530+00:00",
+  "diagnostics": [
+    "assumption_invention",
+    "risk_rationalization"
+  ]
+}

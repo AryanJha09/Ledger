@@ -1,0 +1,4 @@
+model,signal,test,p,cramers_v,dof
+qwen2_5_7b,unsupported_assumption,none,,0.0,
+qwen2_5_7b,risk_rationalization,none,,0.0,
+qwen2_5_7b,deferred,chi2,0.34918585260388657,0.6666666666666667,4.0

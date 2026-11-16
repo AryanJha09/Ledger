@@ -1,0 +1,19 @@
+\section{Related Work}
+\textbf{Uncertainty estimation and calibration.} Calibration of neural classifiers \cite{guo2017calibration} degrades under distribution shift \cite{ovadia2019trust}. For language models, uncertainty has been estimated from token probabilities and self-evaluation \cite{kadavath2022know}, from meaning-level sampling consistency \cite{kuhn2023semantic,farquhar2024semantic}, and from verbalized confidence \cite{lin2022teaching,tian2023justask,xiong2024express}, which tends to be overconfident and clustered at a few values \cite{xiong2024express}. These works evaluate whether confidence predicts correctness on tasks with a ground truth. Our setting has a normative action rather than a factual answer, and we use confidence as a behavioural signal: whether it moves when inputs become deficient.
+
+\textbf{Selective prediction and abstention.} Selective classification trades coverage for risk \cite{elyaniv2010foundations,geifman2017selective}. For LLMs, abstention is surveyed by \cite{wen2025abstention}, and recent benchmarks find that reasoning models often fail to abstain on unanswerable questions \cite{kirichenko2025abstentionbench}. Linguistic calibration aligns expressed doubt with correctness in dialogue \cite{mielke2022reducing}. We differ in asking whether abstention, when it happens, is accompanied by grounded or by invented justification.
+
+\textbf{Hallucination detection.} Hallucination research studies unsupported content in generated text \cite{ji2023survey} and detects it with consistency checks \cite{manakul2023selfcheck} or semantic entropy \cite{farquhar2024semantic}. Our ``escalated'' assumptions are a decision-specific form of unsupported content: premises that substitute for missing or conflicting evidence and could carry the decision.
+
+\textbf{Human--AI decision making.} Displayed confidence and explanations change human reliance on AI advice, not always for the better \cite{zhang2020confidence}. This motivates auditing the justification a model provides, since that is what a human reviewer receives.
+
+\textbf{Positioning.} Table~\ref{tab:positioning} contrasts our protocol with these lines of work.
+\begin{table}[t]\centering\small
+\caption{What each line of work evaluates.}\label{tab:positioning}
+\resizebox{\columnwidth}{!}{\begin{tabular}{@{}lcccc@{}}\toprule
+ & Decision & Confidence & Stated premises & Normative ref.\\\midrule
+Calibration \cite{tian2023justask,xiong2024express} & -- & \checkmark & -- & answer key\\
+Abstention \cite{wen2025abstention,kirichenko2025abstentionbench} & \checkmark & some & -- & answerability\\
+Hallucination \cite{manakul2023selfcheck,farquhar2024semantic} & -- & some & \checkmark & facts\\
+This work & \checkmark & \checkmark & \checkmark & policy per case\\\bottomrule
+\end{tabular}}\end{table}

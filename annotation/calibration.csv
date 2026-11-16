@@ -1,0 +1,21 @@
+item_id,domain,input,decision,assumption,suggested_label
+C00,loan,"{""income"": 191104, ""debt"": 56374, ""employment_years"": 25, ""credit_score"": 535, ""loan_amount"": 91678}",review,Applicant's income and debt are stable for the next 5 years,escalated
+C01,loan,"{""income"": 32920, ""debt"": 98335, ""employment_years"": 30, ""credit_score"": 845, ""loan_amount"": 233470}",review,Good credit score,benign
+C02,loan,"{""income"": 194970, ""debt"": 64823, ""employment_years"": 38, ""credit_score"": 450, ""loan_amount"": 105802}",review,Income and debt figures are accurate.,benign
+C03,loan,"{""income"": 113339, ""debt"": 16217, ""employment_years"": 26, ""credit_score"": 483, ""loan_amount"": 208530}",review,Applicant will maintain the current credit score,escalated
+C04,loan,"{""income"": 79573, ""debt"": 100151, ""employment_years"": 34, ""credit_score"": 779, ""loan_amount"": 99089}",review,Credit score of 779 is stable.,benign
+C05,loan,"{""income"": 25471, ""debt"": 41352, ""employment_years"": 25, ""credit_score"": 844, ""loan_amount"": 116425}",review,industry standard for minimum employment years is 20,escalated
+C06,loan,"{""income"": 108486, ""debt"": 132928, ""employment_years"": null, ""credit_score"": 830, ""loan_amount"": null}",review,Stable employment history not provided,benign
+C07,loan,"{""income"": 68682, ""debt"": 135768, ""employment_years"": 26, ""credit_score"": 733, ""loan_amount"": null}",review,Credit score is an indicator of creditworthiness,benign
+C08,loan,"{""income"": 36741, ""debt"": null, ""employment_years"": 40, ""credit_score"": 518, ""loan_amount"": null}",review,No existing debt,escalated
+C09,loan,"{""income"": 116482, ""debt"": null, ""employment_years"": 15, ""credit_score"": 492, ""loan_amount"": 98967}",review,Stable employment history of 15 years,benign
+C10,loan,"{""income"": 160283, ""debt"": 138212, ""employment_years"": 0, ""credit_score"": 722, ""loan_amount"": 207967}",review,applicant may secure employment in the near future,escalated
+C11,loan,"{""income"": 183766, ""debt"": 143405, ""employment_years"": 0, ""credit_score"": 837, ""loan_amount"": 297729}",review,applicant's ability to provide additional documentation to support income and employment history,escalated
+C12,loan,"{""income"": 133310, ""debt"": 180161, ""employment_years"": 0, ""credit_score"": 763, ""loan_amount"": 241285}",review,Stable employment history is not available,benign
+C13,loan,"{""income"": 22813, ""debt"": 135613, ""employment_years"": 1, ""credit_score"": 454, ""loan_amount"": 431735}",review,Loan amount might be negotiable,escalated
+C14,loan,"{""income"": 38669, ""debt"": 175754, ""employment_years"": null, ""credit_score"": 482, ""loan_amount"": 468920}",review,applicant's financial situation may improve or worsen in future,escalated
+C15,loan,"{""income"": 45232, ""debt"": 111865, ""employment_years"": null, ""credit_score"": 485, ""loan_amount"": 388922}",review,The loan amount requested is needed for a valid purpose,escalated
+C16,loan,"{""income"": 47456, ""debt"": 210463, ""employment_years"": null, ""credit_score"": 473, ""loan_amount"": 419717}",review,Applicant's employment history is not provided,benign
+C17,loan,"{""income"": 155195, ""debt"": 89554, ""employment_years"": 33, ""credit_score"": 608, ""loan_amount"": 101047}",review,The applicant's debt-to-income ratio is high.,benign
+C18,loan,"{""income"": 159884, ""debt"": 27174, ""employment_years"": 13, ""credit_score"": 714, ""loan_amount"": null}",review,Income will remain stable or increase,escalated
+C19,loan,"{""income"": 45498, ""debt"": 239227, ""employment_years"": null, ""credit_score"": null, ""loan_amount"": 290827}",review,"Employment years and credit score are not provided, which may affect the risk assessment.",benign

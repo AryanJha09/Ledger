@@ -1,0 +1,34 @@
+{
+  "run_id": "phi3_medium_0008",
+  "model": "phi3_medium",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 155195,
+    "debt": 89554,
+    "employment_years": 33,
+    "credit_score": 608,
+    "loan_amount": 101047
+  },
+  "agent_output": {
+    "risks": [
+      "high debt compared to income",
+      "borderline credit score"
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": [
+      "The applicant's debt-to-income ratio is high.",
+      "The credit score suggests a potential risk."
+    ]
+  },
+  "timestamp": "2026-02-06T21:04:19.029480+00:00",
+  "diagnostics": [
+    "assumption_invention",
+    "assumption_escalation"
+  ]
+}

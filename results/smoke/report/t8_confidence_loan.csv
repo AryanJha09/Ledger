@@ -1,0 +1,2 @@
+model,mean_conf,distinct_values,conf_no_uncertainty,conf_missing,conf_contradictory,auroc_lower_conf_when_deficient,brier_vs_policy,ece_vs_policy
+qwen2_5_7b,"0.81 [0.74, 0.88]",3,0.95,0.85,0.7,0.625,0.399,0.41

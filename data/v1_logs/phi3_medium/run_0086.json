@@ -1,0 +1,29 @@
+{
+  "run_id": "phi3_medium_0086",
+  "model": "phi3_medium",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": 42789,
+    "debt": 91304,
+    "employment_years": null,
+    "credit_score": null,
+    "loan_amount": 480161
+  },
+  "agent_output": {
+    "risks": [
+      "High debt-to-income ratio",
+      "Unknown employment history",
+      "Lack of credit score"
+    ],
+    "decision": "review",
+    "confidence": 0.65,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T21:09:07.302847+00:00",
+  "diagnostics": []
+}

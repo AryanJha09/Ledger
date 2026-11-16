@@ -1,0 +1,12 @@
+model_key,term,odds_ratio,or_low,or_high,p,error
+deepseek_r1_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.contradictory]",4.893664037839568,0.5583151555855568,42.89324313635698,0.15164861492893994,
+deepseek_r1_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.missing]",5.759949018035154,0.740701843534381,44.79131917919165,0.09429940612548175,
+deepseek_r1_7b,fit_failed,,,,,math range error
+llama3_8b,fit_failed,,,,,Singular matrix
+mistral_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.contradictory]",1.4522772184705708,0.5023854008092806,4.198189509271377,0.4908592917033442,
+mistral_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.missing]",2.9317534440296114,0.9521831258992758,9.026812199031456,0.06085192456949113,
+mistral_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.normal]",2.1529426648969463,0.7186314146127283,6.449985380657846,0.17075854432761517,
+mistral_7b,"C(condition, Treatment(reference='no_uncertainty'))[T.stress]",4.2760864082413,1.3438961747456748,13.60589851683022,0.013875713959241327,
+mistral_7b,log_chars,14.821081955463889,2.369206466417166,92.71647424749986,0.003951406156261683,
+phi3_medium,fit_failed,,,,,math range error
+qwen2_5_7b,fit_failed,,,,,math range error

@@ -15,3 +15,4 @@ analysis/model_summary.json
 # Large generated files
 *.log
 ø
+.pytest_cache/

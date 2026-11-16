@@ -1,0 +1,29 @@
+{
+  "run_id": "mistral_7b_0091",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": 37505,
+    "debt": 108084,
+    "employment_years": null,
+    "credit_score": null,
+    "loan_amount": 406883
+  },
+  "agent_output": {
+    "risks": [
+      "High debt-to-income ratio",
+      "Unverified employment history",
+      "Unknown credit score"
+    ],
+    "decision": "review",
+    "confidence": 0.7,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T20:59:16.142833+00:00",
+  "diagnostics": []
+}

@@ -1,0 +1,18 @@
+\begin{tabular}{llrrrrl}
+\toprule
+model\_key & term & odds\_ratio & or\_low & or\_high & p & error \\
+\midrule
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.contradictory] & 2.090147 & 0.156675 & 27.883849 & 0.577034 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.missing] & 20.333809 & 2.112103 & 195.759314 & 0.009132 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.normal] & 3.937416 & 0.325443 & 47.637380 & 0.281280 & NaN \\
+deepseek\_r1\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.stress] & 4.395914 & 0.411467 & 46.963845 & 0.220510 & NaN \\
+deepseek\_r1\_7b & log\_chars & 6.737323 & 2.923423 & 15.526838 & 0.000008 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.contradictory] & 0.779769 & 0.270106 & 2.251117 & 0.645603 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.missing] & 0.592318 & 0.203650 & 1.722757 & 0.336337 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.normal] & 0.326188 & 0.117833 & 0.902961 & 0.031048 & NaN \\
+mistral\_7b & C(condition, Treatment(reference='no\_uncertainty'))[T.stress] & 0.385330 & 0.136772 & 1.085598 & 0.071145 & NaN \\
+mistral\_7b & log\_chars & 89.948647 & 14.846168 & 544.972894 & 0.000001 & NaN \\
+phi3\_medium & fit\_failed & NaN & NaN & NaN & NaN & Singular matrix \\
+qwen2\_5\_7b & fit\_failed & NaN & NaN & NaN & NaN & math range error \\
+\bottomrule
+\end{tabular}

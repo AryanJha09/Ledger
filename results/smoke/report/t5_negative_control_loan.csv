@@ -1,0 +1,4 @@
+model,signal,rate_uncertain,rate_control,cohens_h,p,p_holm
+qwen2_5_7b,unsupported_assumption,0.0,0.0,0.0,1.0,1.0
+qwen2_5_7b,risk_rationalization,0.0,0.0,0.0,1.0,1.0
+qwen2_5_7b,gap_acknowledged,0.16666666666666666,0.0,0.8410686705679302,1.0,1.0

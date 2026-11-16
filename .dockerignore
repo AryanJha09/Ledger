@@ -1,0 +1,12 @@
+.git
+.venv
+**/__pycache__
+.pytest_cache
+results/
+annotation/labels/
+*.pdf
+*.zip
+*.docx
+github files/
+paper/*.aux
+paper/*.log

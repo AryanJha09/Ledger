@@ -1,0 +1,28 @@
+{
+  "run_id": "mistral_7b_0001",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 28637,
+    "debt": 37159,
+    "employment_years": 13,
+    "credit_score": 777,
+    "loan_amount": 137006
+  },
+  "agent_output": {
+    "risks": [
+      "High debt-to-income ratio",
+      "Average credit score for a loan of significant size"
+    ],
+    "decision": "review",
+    "confidence": 0.75,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T20:56:50.021848+00:00",
+  "diagnostics": []
+}

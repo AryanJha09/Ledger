@@ -1,0 +1,25 @@
+{
+  "run_id": "null_agent_0011",
+  "model": "null_agent",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 61359,
+    "debt": 23625,
+    "employment_years": 17,
+    "credit_score": 676,
+    "loan_amount": 166988
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "review",
+    "confidence": 0.5,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T21:30:26.587116+00:00",
+  "diagnostics": []
+}

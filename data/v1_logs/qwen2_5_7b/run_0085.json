@@ -1,0 +1,28 @@
+{
+  "run_id": "qwen2_5_7b_0085",
+  "model": "qwen2_5_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "stress",
+  "input": {
+    "income": null,
+    "debt": 117306,
+    "employment_years": 2,
+    "credit_score": null,
+    "loan_amount": 385306
+  },
+  "agent_output": {
+    "risks": [
+      "High debt level",
+      "No income information"
+    ],
+    "decision": "review",
+    "confidence": 0.7,
+    "assumptions": []
+  },
+  "timestamp": "2026-02-06T21:03:22.714129+00:00",
+  "diagnostics": []
+}

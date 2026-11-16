@@ -1,0 +1,26 @@
+{
+  "run_id": "phi3_medium_0024",
+  "model": "phi3_medium",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 25471,
+    "debt": 41352,
+    "employment_years": 25,
+    "credit_score": 844,
+    "loan_amount": 116425
+  },
+  "agent_output": {
+    "risks": [],
+    "decision": "review",
+    "confidence": 0.5,
+    "assumptions": [],
+    "meta_error": "Invalid JSON output from model"
+  },
+  "timestamp": "2026-02-06T21:05:09.912962+00:00",
+  "diagnostics": []
+}

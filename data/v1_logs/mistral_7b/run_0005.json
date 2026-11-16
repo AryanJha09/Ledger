@@ -1,0 +1,33 @@
+{
+  "run_id": "mistral_7b_0005",
+  "model": "mistral_7b",
+  "metadata": {
+    "agent_type": "real",
+    "model_name": "mistral-7b-instruct",
+    "temperature": 0.7
+  },
+  "case_type": "normal",
+  "input": {
+    "income": 149184,
+    "debt": 27727,
+    "employment_years": 26,
+    "credit_score": 720,
+    "loan_amount": 7115
+  },
+  "agent_output": {
+    "risks": [
+      "history of job stability may be a factor",
+      "debt-to-income ratio is close to recommended limit"
+    ],
+    "decision": "review",
+    "confidence": 0.75,
+    "assumptions": [
+      "stable employment history will continue",
+      "applicant's income will remain consistent"
+    ]
+  },
+  "timestamp": "2026-02-06T20:56:56.745202+00:00",
+  "diagnostics": [
+    "assumption_invention"
+  ]
+}
